@@ -1,15 +1,16 @@
 import cls from "./todo.module.scss";
+import Trash from "../../assets/images/trash.svg";
 
 function Todo({ todo, handleToggle, removeTask }) {
   return (
     <div key={todo.id} className={cls["item-todo"]}>
-      <div
-        className={todo.complate ? [cls.line] : [cls.noline]}
-        onClick={() => handleToggle(todo.id)}
-      >
+      <div className={todo.complete ? [cls.checked] : [cls.nochecked]}></div>
+      <div className={cls.task} onClick={() => handleToggle(todo.id)}>
         {todo.task}
       </div>
-      <div onClick={() => removeTask(todo.id)}>X</div>
+      <div className={cls.deleteBtn} onClick={() => removeTask(todo.id)}>
+        <img src={Trash} alt="" />
+      </div>
     </div>
   );
 }

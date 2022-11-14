@@ -1,0 +1,45 @@
+.form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: -30px;
+
+  .input {
+    background: #262626;
+    width: 638px;
+    border: 1px solid #0d0d0d;
+    border-radius: 8px;
+    padding: 16px;
+    outline: none;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 140%;
+
+    color: #808080;
+  }
+
+  .btn {
+    background: #1e6f9f;
+    border-radius: 8px;
+    padding: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    border: none;
+
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 140%;
+
+    color: #f2f2f2;
+    cursor: pointer;
+
+    &:active {
+      background: #123b53;
+    }
+  }
+}

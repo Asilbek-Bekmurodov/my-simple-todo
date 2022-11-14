@@ -1,6 +1,7 @@
+import cls from "./todo-form.module.scss";
+import addPhoto from "../../assets/images/add.svg";
+
 import { useState } from "react";
-
-
 function TodoForm({ addTask }) {
   const [userInput, setUserInput] = useState("");
 
@@ -21,15 +22,19 @@ function TodoForm({ addTask }) {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className={cls.form} onSubmit={handleSubmit}>
       <input
+        autoFocus={true}
+        className={cls.input}
         type="text"
         value={userInput}
         onKeyDown={handleKeyPress}
-        placeholder="write something !"
+        placeholder="Write something !"
         onChange={handleChange}
       />
-      <button>add</button>
+      <button className={cls.btn}>
+        Add <img src={addPhoto} alt="" />
+      </button>
     </form>
   );
 }

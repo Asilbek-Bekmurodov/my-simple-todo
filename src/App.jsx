@@ -1,7 +1,9 @@
 import { useState } from "react";
 import TodoForm from "./components/todo-form";
 import Todo from "./components/todo";
-import todo from "./components/todo";
+import Logo from "./assets/images/Logo.svg";
+import Area from "./assets/images/Clipboard.png";
+import cls from "./assets/base.module.scss";
 
 function App() {
   const [todos, setTodos] = useState([]);
@@ -10,7 +12,8 @@ function App() {
     const newTask = {
       id: Math.random(16).toString(36).substring(2, 9),
       task: userInput,
-      complate: false,
+      complete: false,
+      editMode: false,
     };
     setTodos([...todos, newTask]);
   };
@@ -23,25 +26,47 @@ function App() {
   const handleToggle = (id) => {
     setTodos([
       ...todos.map((todo) =>
-        todo.id === id ? { ...todo, complate: !todo.complate } : { ...todo }
+        todo.id === id ? { ...todo, complete: !todo.complete } : { ...todo }
       ),
     ]);
   };
 
   return (
-    <div className="App">
+    <div className={cls.app}>
       <header>
-        <h1>Count todos : {todos.length}</h1>
+        <div className={cls.logo}>
+          <img src={Logo} alt="" />
+        </div>
       </header>
       <TodoForm addTask={addTask} />
-      {todos.map((todo) => (
-        <Todo
-          todo={todo}
-          key={todo.id}
-          removeTask={removeTask}
-          handleToggle={handleToggle}
-        />
-      ))}
+
+      <div className={cls["todo-wrapper"]}>
+        <div className={cls["todo-counter"]}>
+          <p className={cls.create}>
+            Created tasks <span>{todos.length}</span>{" "}
+          </p>
+          <p className={cls.done}>
+            Done <span>3</span>
+          </p>
+        </div>
+
+        <div className={cls["todo-area"]}>
+          <div className={cls.message}>
+            <img src={Area} alt="" />
+            <h3>You have no tasks registered yet</h3>
+            <p>Create tasks and organize your tasks</p>
+          </div>
+
+          {todos.map((todo) => (
+            <Todo
+              todo={todo}
+              key={todo.id}
+              removeTask={removeTask}
+              handleToggle={handleToggle}
+            />
+          ))}
+        </div>
+      </div>
     </div>
   );
 }

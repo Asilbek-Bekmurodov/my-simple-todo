@@ -1,0 +1,83 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.app {
+  text-align: center;
+  height: 100vh;
+  font-family: "Inter", Geneva, Verdana, sans-serif;
+  background-color: #1a1a1a;
+
+  header {
+    background-color: #0d0d0d;
+    width: 100%;
+    height: 200px;
+    padding: 70px 0;
+  }
+
+  .todo-wrapper {
+    padding: 0 352px;
+    margin-top: 64px;
+
+    .todo-counter {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .create {
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 17px;
+        color: #4ea8de;
+      }
+      .done {
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 17px;
+
+        color: #8284fa;
+      }
+      span {
+        background: #333333;
+        border-radius: 999px;
+        padding: 2px 8px;
+        color: white;
+        margin-left: 8px;
+      }
+    }
+
+    .todo-area {
+      border-top: 1px solid #333333;
+      border-radius: 8px;
+      margin-top: 24px;
+      padding: 64px 24px;
+
+      .message {
+        img {
+          margin-bottom: 10px;
+        }
+
+        h3 {
+          font-size: 16px;
+          line-height: 140%;
+
+          text-align: center;
+
+          color: #808080;
+        }
+        p {
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 140%;
+
+          text-align: center;
+
+          color: #808080;
+        }
+      }
+    }
+  }
+}

@@ -1,9 +1,48 @@
 .item-todo {
   display: flex;
   align-items: center;
-  gap: 20px;
+  background: #262626;
+
+  border: 1px solid #333333;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.06);
+  border-radius: 8px;
+  padding: 16px;
+  text-align: start;
+  margin-bottom: 10px;
+}
+
+.checked {
+  width: 24px;
+  height: 24px;
+  border-radius: 100%;
+  border: 1px solid #4ea8de;
+  margin-right: 20px;
+}
+
+.nochecked {
+  width: 24px;
+  height: 24px;
+  margin-right: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url("../../assets/images/tiked.svg");
+  background-repeat: no-repeat;
 }
 
 .line {
   text-decoration: line-through;
+}
+
+.deleteBtn {
+  margin-left: auto;
+  cursor: pointer;
+}
+
+.task {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 140%;
+
+  color: #f2f2f2;
 }
